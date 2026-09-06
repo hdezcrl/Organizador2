@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Planify Events | Organiza tu evento fácil</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <header class="encabezado">
+    <h1>Planify Events</h1>
+    <p>Organiza eventos empresariales de forma simple, rápida e intuitiva.</p>
+    <a href="#planificador" class="btn-comenzar">Comenzar</a>
+  </header>
+
+  <section id="planificador" class="formulario-contenedor">
+    <h2>Planificador de Evento</h2>
+    <form id="formEvento">
+      <div class="paso">
+        <label>Tipo de evento:</label>
+        <select name="tipo" required>
+          <option value="">Selecciona...</option>
+          <option value="Conferencia">Conferencia</option>
+          <option value="Capacitación">Capacitación</option>
+          <option value="Reunión interna">Reunión interna</option>
+          <option value="Lanzamiento">Lanzamiento</option>
+        </select>
+      </div>
+
+      <div class="paso">
+        <label>Fecha del evento:</label>
+        <input type="date" name="fecha" required />
+      </div>
+
+      <div class="paso">
+        <label>Número de asistentes:</label>
+        <input type="number" name="asistentes" min="1" required />
+      </div>
+
+      <div class="paso">
+        <label>Servicios necesarios:</label>
+        <div class="checkboxes">
+          <label><input type="checkbox" name="servicios" value="Catering" /> Catering</label>
+          <label><input type="checkbox" name="servicios" value="Audiovisual" /> Audiovisual</label>
+          <label><input type="checkbox" name="servicios" value="Espacio físico" /> Espacio físico</label>
+        </div>
+      </div>
+
+      <div class="paso">
+        <label>Notas adicionales:</label>
+        <textarea name="notas" rows="4" placeholder="Detalles específicos, ideas, etc."></textarea>
+      </div>
+
+      <button type="submit" class="btn-enviar">Generar resumen</button>
+    </form>
+  </section>
+
+  <section id="resumen" class="resumen-oculto">
+    <h2>Resumen de tu evento</h2>
+    <div id="resumenContenido"></div>
+    <button onclick="location.reload()">Planificar otro evento</button>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Planify Events. Tu aliado en organización empresarial.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
